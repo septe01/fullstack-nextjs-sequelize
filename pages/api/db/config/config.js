@@ -19,20 +19,14 @@ module.exports = {
     logging: false,
   },
   production: {
-    username: "nefsuumphgyljq",
-    password:
-      "f4c84c8fbf3509abc562801c89111844643a736c39f983f02468728b61a13784",
-    database: "ddsng2p05ki5ls",
-    host: "ec2-54-155-194-191.eu-west-1.compute.amazonaws.com",
-    port: "5432",
+    username: process.env.PRODUCTION_USERNAME,
+    password: process.env.PRODUCTION_PASSWORD,
+    database: process.env.PRODUCTION_DATABASE,
+    host: process.env.PRODUCTION_HOST,
+    port: process.env.PRODUCTION_PORT,
     dialect: "postgres",
-    protocol: "postgres",
     dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // <<<<<<< YOU NEED THIS
-      },
+      ssl: true,
     },
-    // dialect: "postgres",
   },
 };
